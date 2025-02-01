@@ -1,0 +1,75 @@
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 20px;
+    margin: 30px auto;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 1100px;
+}
+.project-text {
+    width: 80%;
+    color: rgb(0, 0, 0);
+    
+}
+.project-text h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+.project-text p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* Style des images */
+.project-images {
+    width: 55%;
+    display: flex;
+    gap: 15px;
+}
+.project-images img {
+    width: 50%;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+.project-images img:hover {
+    transform: scale(1.05);
+}
+#projects{
+    background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
+}
+/* Style du bouton */
+.button { 
+    display: inline-block;
+    background-color: #4CAF50; /* Couleur du bouton */
+    color: white; /* Couleur du texte */
+    font-size: 16px;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none; /* Enlever la ligne sous le texte */
+    border-radius: 5px; /* Coins arrondis */
+    transition: background-color 0.3s ease; /* Effet de transition */
+    margin-top: 10px; /* Espace au-dessus du bouton */
+}
+
+.button:hover {
+    background-color: #45a049; /* Couleur au survol */
+}
+.pr {
+    text-align: center;
+    color: white;
+    font-family: 'Inria Serif', serif;
+}
+.pr h2 {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    color: white;
+}
+.pr p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.6;
+}

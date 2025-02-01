@@ -1,0 +1,109 @@
+/* 🎨 Style de la section Services */
+.servicesSection {
+    padding: 50px 0;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.sr h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    font-family: 'Inria', serif;
+    background-image: linear-gradient(90deg, #2DB973 0%, #188192 100%);
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    margin-bottom: 40px;
+}
+
+.servicesList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.serviceCard {
+    background: #DAF4E7;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    height: 100px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.serviceImage {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+    height: 100px;
+}
+
+.serviceCard h4 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #090a09;
+    margin-top: 10px;
+}
+
+
+/* 🎯 Style de la section Processus de Travail */
+
+.processSection {
+    text-align: center;
+    padding: 60px 20px;
+    background: #f8f9fa;
+}
+
+.processTimeline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.processStep {
+    width: 280px;
+    padding: 20px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.processStep:hover {
+    transform: translateY(-5px);
+}
+
+.processIcon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.processCta {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 12px 24px;
+    background: #bcefd5;
+    color: rgb(28, 27, 27);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.processCta:hover {
+    background: #71db88;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
