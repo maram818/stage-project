@@ -6,8 +6,8 @@ export default function Projets() {
       <div className={styles.pr}>
         <h2>Nos Réalisations</h2>
         <p>
-          Le portfolio de Verdano Solutions présente nos projets et réalisations, <br />
-          mettant en avant notre savoir-faire dans la création de solutions numériques sur mesure.<br />
+          Le portfolio de Verdano Solutions présente nos projets et réalisations, 
+          mettant en avant notre savoir-faire dans la création de solutions numériques sur mesure.
           Nous travaillons avec passion pour aider nos clients à concrétiser leurs idées et atteindre leurs objectifs.
         </p>
       </div>

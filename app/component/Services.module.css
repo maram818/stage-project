@@ -1,38 +1,47 @@
-/* 🎨 Style de la section Services */
+/* 🌟 Section Services */
 .servicesSection {
     padding: 50px 0;
-    background-color: #ffffff;
+    background: #ffffff; /* Fond blanc */
     text-align: center;
+    transition: min-height 0.3s ease;
 }
 
-.sr h2 {
+.servicesSection.expandedSection {
+    min-height: 600px;
+}
+
+.servicesSection h2 {
     font-size: 2.5rem;
+    font-style: normal;
     font-weight: bold;
     font-family: 'Inria', serif;
-    background-image: linear-gradient(90deg, #2DB973 0%, #188192 100%);
+    background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
     color: transparent;
     background-clip: text;
     -webkit-background-clip: text;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
+/* 🌟 Liste des services */
 .servicesList {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 50px;
+    gap: 35px;
     margin-top: 30px;
 }
 
+/* 🌟 Cartes de services */
 .serviceCard {
-    background: #DAF4E7;
+    background: #ffffff; /* Fond blanc */
     padding: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-    width: 250px;
-    height: 100px;
+    width: 220px;
+    height: 90px;;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
 .serviceCard:hover {
@@ -42,68 +51,78 @@
 
 .serviceImage {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 100px;
-    height: 100px;
+    margin: 0 auto 10px auto;
+    width: 80px;
+    height: 80px;
 }
 
 .serviceCard h4 {
     font-size: 1.1rem;
     font-weight: bold;
-    color: #090a09;
+    color: #090a09; /* Noir pour lisibilité */
     margin-top: 10px;
 }
 
-
-/* 🎯 Style de la section Processus de Travail */
-
-.processSection {
-    text-align: center;
-    padding: 60px 20px;
-    background: #f8f9fa;
-}
-
-.processTimeline {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.processStep {
-    width: 280px;
+/* 🌟 Section Détails des services */
+.serviceDetails {
+    margin-top: 20px;
     padding: 20px;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    background: #ffffff; /* Fond blanc */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-    transition: transform 0.3s ease;
+    transition: min-height 0.3s ease;
 }
 
-.processStep:hover {
-    transform: translateY(-5px);
+.serviceDetails.expandedDetails {
+    min-height: 400px;
 }
 
-.processIcon {
-    font-size: 40px;
-    margin-bottom: 10px;
-}
-
-.processCta {
-    display: inline-block;
-    margin-top: 30px;
-    padding: 12px 24px;
-    background: #bcefd5;
-    color: rgb(28, 27, 27);
-    text-decoration: none;
-    border-radius: 8px;
+.serviceDetails h2 {
+    font-size: 1.5rem;
     font-weight: bold;
-    transition: background 0.3s;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 10px;
+    color: #188192;
 }
 
-.processCta:hover {
-    background: #71db88;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+.serviceDetails p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #090a09; /* Noir pour un bon contraste */
+}
+
+/* 🌟 Bouton Retour */
+.serviceDetails button {
+    margin-top: 15px;
+    padding: 10px 18px;
+    background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.serviceDetails button:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transform: scale(1.05);
+}
+
+/* 🌟 Animation pour l'apparition des détails */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.serviceDetails {
+    animation: fadeIn 0.5s ease-out;
 }

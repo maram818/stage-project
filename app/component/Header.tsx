@@ -31,7 +31,7 @@ export default function Header() {
                     </ul>
                 </nav>
                 <Link href="#contact" className={style.ctaBtn}>
-                    Prendre rendez-vous
+                    Demandez devis
                 </Link>
             </div>
             <div className={style.titre}>
@@ -44,7 +44,9 @@ export default function Header() {
                     Accélérez votre succès avec des solutions <br />
                     sur mesure
                 </h2>
-                <button className={style.btn}>Contactez-nous</button>
+                <Link rel="stylesheet" href="#contact" >
+                <button  className={style.btn}>Contactez-nous</button></Link>
+                
                 
             </div>
         </header>

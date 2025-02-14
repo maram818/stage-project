@@ -37,8 +37,9 @@
 .project-images img:hover {
     transform: scale(1.05);
 }
-#projects{
+.section{
     background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
+    padding-bottom: 20px;
 }
 /* Style du bouton */
 .button { 
@@ -66,10 +67,11 @@
     font-size: 2.5rem;
     margin-bottom: 15px;
     color: white;
+    font-style: normal;
 }
 .pr p {
     font-size: 1.2rem;
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
     line-height: 1.6;
 }

@@ -1,106 +1,55 @@
+"use client";
+
+import { useState } from 'react';
 import Image from 'next/image';
 import styles from './Services.module.css';
 
-function Services (){
-    return (
-        <>
-            {/* Section Services */}
-            <section id="services" className={styles.servicesSection}>
-                <div className={styles.sr}>
-                    <h2>Services</h2>
-                    <div className={styles.servicesList}>
+const services = [
+  { id: "intelligence-artificielle", title: "Intelligence Artificielle", image: "/Imaged-removebg-preview.png", description: "Nous utilisons l'IA pour automatiser vos tâches et améliorer l'efficacité de vos processus. Profitez de solutions intelligentes pour analyser des données et prédire des tendances." },
+  { id: "consultation-technique", title: "Consultation Technique", image: "/image a.png", description: "Obtenez des conseils experts pour optimiser vos projets, choisir les bonnes technologies et résoudre vos défis techniques efficacement." },
+  { id: "solution-cloud", title: "Solution Cloud", image: "/Imagec-removebg-preview.png", description: "Avec nos solutions Cloud, vous pouvez stocker et gérer vos données en toute sécurité, tout en accédant à vos fichiers depuis n'importe où et à tout moment." },
+  { id: "developpement-web-mobile", title: "Développement Web et Mobile", image: "/Imageb-removebg-preview.png", description: "Nous créons des sites web et des applications mobiles adaptés à vos besoins. De l’idée à la réalisation, nous vous accompagnons à chaque étape." }
+];
 
-                        {/* Service : Intelligence Artificielle */}
-                        <div className={styles.serviceCard}>
-                            <h4>Intelligence artificielle</h4>
-                            <Image 
-                                src="/Imaged-removebg-preview.png" 
-                                alt="Intelligence artificielle"
-                                width={100} 
-                                height={100} 
-                                className={styles.serviceImage}
-                            />
-                        </div>
+export default function Services() {
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+  const selectedServiceData = services.find(service => service.id === selectedService);
 
-                        {/* Service : Solution Cloud */}
-                        <div className={styles.serviceCard}>
-                            <h4>Solution Cloud</h4>
-                            <Image 
-                                src="/Imagec-removebg-preview.png" 
-                                alt="Solution Cloud"
-                                width={100} 
-                                height={100} 
-                                className={styles.serviceImage}
-                            />
-                        </div>
+  return (
+    <section
+      id="services"
+      className={`${styles.servicesSection} ${selectedService ? styles.expandedSection : ''}`}
+      onClick={(e) => {
+        // Fermer la section si on clique en dehors des détails
+        if (e.target instanceof HTMLElement && e.target.closest(`.${styles.serviceDetails}`) === null) {
+          setSelectedService(null);
+        }
+      }}
+    >
+      <h2>Nos Services</h2>
+      <div className={styles.servicesList}>
+        {services.map((service) => (
+          <div
+            key={service.id}
+            className={styles.serviceCard}
+            onClick={(e) => {
+              e.stopPropagation(); // Empêcher la fermeture immédiate du détail
+              setSelectedService(service.id);
+            }}
+          >
+            <h4>{service.title}</h4>
+            <Image src={service.image} alt={service.title} width={100} height={100} className={styles.serviceImage} />
+          </div>
+        ))}
+      </div>
 
-                        {/* Service : Consultation Technique */}
-                        <div className={styles.serviceCard}>
-                            <h4>Consultation Technique</h4>
-                            <Image 
-                                src="/image a.png" 
-                                alt="Consultation technique"
-                                width={100} 
-                                height={100} 
-                                className={styles.serviceImage}
-                            />
-                        </div>
-
-                        {/* Service : Développement Web et Mobile */}
-                        <div className={styles.serviceCard}>
-                            <h4>Développement Web et Mobile</h4>
-                            <Image 
-                                src="/Imageb-removebg-preview.png" 
-                                alt="Développement web et mobile"
-                                width={100} 
-                                height={100} 
-                                className={styles.serviceImage}
-                            />
-                        </div>
-
-                    </div>
-                </div>
-            </section>
-
-            {/* Section Processus de Travail */}
-            <section className={styles.processSection}>
-                <h2>Notre Processus de Travail</h2>
-                <div className={styles.processTimeline}>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>🔍</div>
-                        <h3>Étude de Besoin</h3>
-                        <p>Analyse des objectifs et contraintes du projet</p>
-                    </div>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>📊</div>
-                        <h3>Analyse du Problème</h3>
-                        <p>Identification des défis techniques et fonctionnels.</p>
-                    </div>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>🎨</div>
-                        <h3>Design de la Solution</h3>
-                        <p>Conception UX/UI et plan technique.</p>
-                    </div>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>💻</div>
-                        <h3>Développement</h3>
-                        <p>Codage et intégration des fonctionnalités.</p>
-                    </div>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>✅</div>
-                        <h3>Test & Déploiement</h3>
-                        <p>Validation et mise en ligne du projet.</p>
-                    </div>
-                    <div className={styles.processStep}>
-                        <div className={styles.processIcon}>🔄</div>
-                        <h3>Maintenance</h3>
-                        <p>Support technique et améliorations continues.</p>
-                    </div>
-                </div>
-                <a href="#contact" className={styles.processCta}>Contactez-nous</a>
-            </section>
-        </>
-    );
-};
-
-export default Services;
+      {selectedServiceData && (
+        <div className={styles.serviceDetails} aria-live="polite">
+          <h2>{selectedServiceData.title}</h2>
+          <p>{selectedServiceData.description}</p>
+          <button onClick={() => setSelectedService(null)}>Retour aux services</button>
+        </div>
+      )}
+    </section>
+  );
+}

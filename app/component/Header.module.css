@@ -111,10 +111,9 @@
   padding: 15px 30px;
   color: #fff;
   background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
-  border: 0.5px solid #0c0c0c;
   border-radius: 5px;
   cursor: pointer;
-  box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0px 4px 4px rgba(1, 2, 0, 0.25);
   width: 310px;
   height: 70px;
   text-align: center;
@@ -122,6 +121,6 @@
 
 .btn:hover {
   background: linear-gradient(90deg, #2DB973 0%, #188192 100%);
-  border: 0.5px solid #0c0c0c;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+ 
+  box-shadow: 0px 4px 4px rgba(98, 77, 77, 0);
 }
